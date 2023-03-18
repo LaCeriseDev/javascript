@@ -8,4 +8,4 @@ if (sex === "H") dear = "cher";
 else if (sex === "F") dear = "chère";
 
 // Affiche un message de bienvenue avec les informations personnels de l'utilisateur
-console.log(`Bonjour ${dear} ${firstname} ${name}, comment allez-vous ?`);
+console.log(`Bonjour ${dear} ${firstname} ${lastname}, comment allez-vous ?`);
