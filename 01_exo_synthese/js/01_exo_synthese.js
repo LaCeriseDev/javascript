@@ -1,33 +1,60 @@
-const GENDER = { MALE : "H", FEMALE : "F" }
-const GREETINGS = { [GENDER.MALE] : "cher", [GENDER.FEMALE] : "chère" };
+(() => {
+    // Donnée concernant le genre pour la salutation
+    const GENDER = { MALE : "H", FEMALE : "F" }
+    const GREETINGS = { [GENDER.MALE] : "cher", [GENDER.FEMALE] : "chère" };
 
-const REGEX_VALIDATION_NAME = /^[A-Za-z]+(-[A-Za-z]+)?$/;
-const isValidInput = str => REGEX_VALIDATION_NAME.test(str);
+    // Valide la chaine de caractère de l'utolisateur
+    const REGEX_VALIDATION_NAME = /^[A-Za-z]+(-[A-Za-z]+)?$/;
+    const isValidInput = str => REGEX_VALIDATION_NAME.test(str);
+    
+    /**
+     * Capitalize la première lettre d'une chaine de caractère
+     * @param {string} str  - la chaine de caractère à capitalizer
+     * @returns {string} - la chaine caractère avec la première lettre en majuscule
+     */
+    const capitalizeInput = str => {return `${str[0].toUpperCase()}${str.slice(1)}`;}
 
-/**
- * Demande à l'utilisateur si un c'est homme ou une femme
- * @return {str} Retourne le genre de l'utilisateur
- */
-const getUserGender = () => {
-    const input = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase().trim();
-    if (input[0] !== GENDER.MALE && input[0] !== GENDER.FEMALE) {return getUserGender();}
-    return input[0];
-}
+    /**
+     * Capitalize la lettre qui suit un tiret d'une chaine de caractère
+     * @param {string} str - la chaine de caractère à capitalizer
+     * @returns - la chaine de caractère avec la lettre suivie d'un tiret en majuscule
+     */
+    const capitalizeAfterDash = str => { return str.replace(/-([a-z])/g, (_, letter) => `-${letter.toUpperCase()}`); };
 
-const getUserPersonalInfo = (message = '') => {
-    const input = prompt(message);
-    if(!isValidInput(input)) {
-        return getUserPersonalInfo(message);}
-    return input;
-}
+    /**
+     * Capitalize la première lettre et la lettre suivie d'un tiret potentiel d'une chaine de caractère
+     * @param {string} str - la chaine de caractère à capitalizer
+     * @returns - la chaine de caractère avec la première lettre et la potentiel lettre suivie d'un tiret en majuscule
+     */
+    const capitalize = str => { return capitalizeInput(capitalizeAfterDash(str)); }
 
-const [firstname, lastname, gender] = [
-    getUserPersonalInfo("Votre prénom ?"),
-    getUserPersonalInfo("Votre nom ?"),
-    getUserGender()
-];
+    /**
+     * Demande à l'utilisateur de saisir une information personelle, met une majuscule à la première lettre et valide l'entrée
+     * @param {string} message - Le message à afficher à l'utilisateur au moment de la saisie
+     * @returns {string} - la chaine de caractère avec la première lettre de caractère
+     */
+    const getUserPersonalInfo = (message = '') => {
+        const input = prompt(message);
+        if(!isValidInput(input)) { return getUserPersonalInfo(message); }
+        return capitalize(input);
+    }   
 
+    /**
+     * Demande à l'utilisateur si c'est un homme ou une femme et valide l'entrée
+     * @return {string} - le genre de l'utilisateur en majuscule
+     */
+    const getUserGender = () => {
+        const input = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase().trim();
+        if (input[0] !== GENDER.MALE && input[0] !== GENDER.FEMALE) {return getUserGender();}
+        return input[0];
+    }
+    
+    const [firstname, lastname, gender] = [
+        getUserPersonalInfo("Votre prénom ?"),
+        getUserPersonalInfo("Votre nom ?"),
+        getUserGender()
+    ];
 
-const dear = GREETINGS[gender];
-
-console.log(`Bonjour ${dear} ${firstname} ${lastname}, comment allez-vous ?`);
+    // Affiche le message de bienvenue personnalisé
+    console.log(`Bonjour ${GREETINGS[gender]} ${firstname} ${lastname}, comment allez-vous ?`);
+})();
