@@ -1,11 +1,22 @@
-// Demande à l'utilisateur de saisir son nom, puis son prénom ainsi que son genre
-let lastname = prompt("Votre nom");
-let firstname = prompt("Votre prénom");
-let sex = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase();
-let dear = "";
+const GENDER = { MALE : "H", FEMALE : "F" }
+const GREETINGS = { [GENDER.MALE] : "cher", [GENDER.FEMALE] : "chère" };
 
-if (sex === "H") dear = "cher";
-else if (sex === "F") dear = "chère";
 
-// Affiche un message de bienvenue avec les informations personnels de l'utilisateur
-console.log(`Bonjour ${dear} ${firstname} ${name}, comment allez-vous ?`);
+/**
+ * Demande à l'utilisateur si un c'est homme ou une femme
+ * @return {str} Retourne le genre de l'utilisateur
+ */
+const getUserGender = () => {
+    const gender = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase();
+    if (gender !== GENDER.MALE && gender !== GENDER.FEMALE) {return askForgender();}
+    return gender;
+}
+
+const [gender] = [
+    getUserGender()
+];
+
+
+const dear = GREETINGS[gender];
+
+console.log(`${dear}`);
