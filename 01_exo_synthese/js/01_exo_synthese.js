@@ -7,9 +7,9 @@ const GREETINGS = { [GENDER.MALE] : "cher", [GENDER.FEMALE] : "chère" };
  * @return {str} Retourne le genre de l'utilisateur
  */
 const getUserGender = () => {
-    const gender = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase();
-    if (gender !== GENDER.MALE && gender !== GENDER.FEMALE) {return askForgender();}
-    return gender;
+    const gender = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase().trim();
+    if (gender[0] !== GENDER.MALE && gender[0] !== GENDER.FEMALE) {return getUserGender();}
+    return gender[0];
 }
 
 const [gender] = [
