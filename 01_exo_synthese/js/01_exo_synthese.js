@@ -33,7 +33,7 @@
      * @param {string} message - Le message à afficher à l'utilisateur au moment de la saisie
      * @returns {string} - la chaine de caractère avec la première lettre de caractère
      */
-    const getUserPersonalInfo = (message = '') => {
+    const getUserPersonalInfo = (message) => {
         const input = prompt(message);
         if(!isValidInput(input)) { return getUserPersonalInfo(message); }
         return capitalize(input);
