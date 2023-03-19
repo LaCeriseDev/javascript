@@ -33,19 +33,22 @@
      * @param {number} tryToFind - Le nombre d'essais effectués par l'utilisateur (par défaut 1)
      * @returns {void} - Rien n'est renvoyé, mais la fonction affiche un message dans la console en fonction du résultat
      */
-    const checkNumber = (numberToFind, tryToFind= 1) => {
-        const input = prompt(GUESS_PROMPT);
-        if (!isValidNumber(input) || input < BOUNDARIES.MIN || input > BOUNDARIES.MAX) {
-            alert(INVALID_INPUT_ERROR);
-            return checkNumber(numberToFind,tryToFind);
-        }
-        if (input != numberToFind) {
-            return input > numberToFind 
-            ? (console.log(LOWER_GUESS.replace("{input}",input)), checkNumber(numberToFind, tryToFind+1))
-            : (console.log(HIGHER_GUESS.replace("{input}",input)), checkNumber(numberToFind, tryToFind+1));
-        }
-        return console.log(SUCCESS.replace("{numberToFind}",numberToFind).replace("{tryToFind}",tryToFind));
+    const checkNumber = (numberToFind, tryToFind = 1) => {
+        setTimeout(() => {
+            const input = prompt(GUESS_PROMPT);
+            if (!isValidNumber(input) || input < BOUNDARIES.MIN || input > BOUNDARIES.MAX) {
+                alert(INVALID_INPUT_ERROR);
+                return checkNumber(numberToFind, tryToFind);
+            }
+            if (input != numberToFind) {
+                return input > numberToFind
+                    ? (console.log(LOWER_GUESS.replace("{input}", input)), checkNumber(numberToFind, tryToFind + 1))
+                    : (console.log(HIGHER_GUESS.replace("{input}", input)), checkNumber(numberToFind, tryToFind + 1));
+            }
+            return console.log(SUCCESS.replace("{numberToFind}", numberToFind).replace("{tryToFind}", tryToFind));
+        }, 100);
     };
+    
 
     const numberToFind = getRandomNumberBetween(BOUNDARIES.MIN, BOUNDARIES.MAX);
 
