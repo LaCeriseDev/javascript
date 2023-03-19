@@ -12,21 +12,21 @@
      * @param {string} str  - la chaine de caractère à capitalizer
      * @returns {string} - la chaine caractère avec la première lettre en majuscule
      */
-    const capitalizeInput = str => {return `${str[0].toUpperCase()}${str.slice(1)}`;}
+    const capitalizeInput = str => `${str[0].toUpperCase()}${str.slice(1)}`;
 
     /**
      * Capitalize la lettre qui suit un tiret d'une chaine de caractère
      * @param {string} str - la chaine de caractère à capitalizer
      * @returns - la chaine de caractère avec la lettre suivie d'un tiret en majuscule
      */
-    const capitalizeAfterDash = str => { return str.replace(/-([a-z])/g, (_, letter) => `-${letter.toUpperCase()}`); };
+    const capitalizeAfterDash = str => str.replace(/-([a-z])/g, (_, letter) => `-${letter.toUpperCase()}`);
 
     /**
      * Capitalize la première lettre et la lettre suivie d'un tiret potentiel d'une chaine de caractère
      * @param {string} str - la chaine de caractère à capitalizer
      * @returns - la chaine de caractère avec la première lettre et la potentiel lettre suivie d'un tiret en majuscule
      */
-    const capitalize = str => { return capitalizeInput(capitalizeAfterDash(str)); }
+    const capitalize = str => capitalizeInput(capitalizeAfterDash(str));
 
     /**
      * Demande à l'utilisateur de saisir une information personelle, met une majuscule à la première lettre et valide l'entrée
@@ -35,7 +35,9 @@
      */
     const getUserPersonalInfo = (message) => {
         const input = prompt(message);
-        if(!isValidInput(input)) { return getUserPersonalInfo(message); }
+        // Si l'utilisateur clique sur "Cancel", affiche un message et termine la fonction.
+        if (input === null) return;
+        if(!isValidInput(input)) return getUserPersonalInfo(message);
         return capitalize(input);
     }   
 
@@ -45,7 +47,8 @@
      */
     const getUserGender = () => {
         const input = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase().trim();
-        if (input[0] !== GENDER.MALE && input[0] !== GENDER.FEMALE) {return getUserGender();}
+        if (input === null) return;
+        if (input[0] !== GENDER.MALE && input[0] !== GENDER.FEMALE) return getUserGender();
         return input[0];
     }
     
