@@ -25,7 +25,7 @@
      * @param {number} max - La borne supérieure, incluse
      * @returns {number} - Un nombre aléatoire entre min et max, inclus
      */
-    const getRandomNumberBetween = (min, max) => Math.floor(Math.random()*(max-min+1)-min);
+    const getRandomNumberBetween = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
     /**
      * Vérifie si le nombre entré par l'utilisateur est égal au nombre à deviner
