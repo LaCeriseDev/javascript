@@ -3,6 +3,11 @@
     const GENDER = { MALE : "H", FEMALE : "F" }
     const GREETINGS = { [GENDER.MALE] : "cher", [GENDER.FEMALE] : "chère" };
 
+    const FIRSTNAME_PROMPT = "Votre prénom ?";
+    const LASTNAME_PROMPT = "Votre nom ?";
+    const GENDER_PROMPT = `Tapez "H" ou "F" si vous êtes un homme ou une femme`;
+    const WELCOME = "Bonjour {GREETINGS[gender]} {firstname} {lastname}, comment allez-vous ?"
+
     // Valide la chaine de caractère de l'utolisateur
     const REGEX_VALIDATION_NAME = /^[A-Za-z]+(-[A-Za-z]+)?$/;
     const isValidInput = str => REGEX_VALIDATION_NAME.test(str);
@@ -46,18 +51,20 @@
      * @return {string} - le genre de l'utilisateur en majuscule
      */
     const getUserGender = () => {
-        const input = prompt(`Tapez "H" ou "F" si vous êtes un homme ou une femme`).toUpperCase().trim();
+        const input = prompt(GENDER_PROMPT).toUpperCase().trim();
         if (input === null) return;
         if (input[0] !== GENDER.MALE && input[0] !== GENDER.FEMALE) return getUserGender();
         return input[0];
     }
     
     const [firstname, lastname, gender] = [
-        getUserPersonalInfo("Votre prénom ?"),
-        getUserPersonalInfo("Votre nom ?"),
+        getUserPersonalInfo(FIRSTNAME_PROMPT),
+        getUserPersonalInfo(LASTNAME_PROMPT),
         getUserGender()
     ];
 
     // Affiche le message de bienvenue personnalisé
-    console.log(`Bonjour ${GREETINGS[gender]} ${firstname} ${lastname}, comment allez-vous ?`);
+    // console.log(`Bonjour ${GREETINGS[gender]} ${firstname} ${lastname}, comment allez-vous ?`);
+    console.log(WELCOME.replace("{GREETINGS[gender]}",GREETINGS[gender]).replace("{firstname}",firstname).replace("{lastname}",lastname));
+    
 })();
