@@ -7,7 +7,8 @@
     const HIGHER_GUESS = "Nombre essayé {input}, plus haut";
     const GUESS_PROMPT = `Deviner le nombre entre ${LIMITS.MIN} et ${LIMITS.MAX}`;
     const SUCCESS = "Parfait le nombre était bien {numberToFind}! Tu as trouvé en {tryToFind} fois";
-    
+    const CANCEL = "Tu as abandonné. Le nombre à deviner était :";
+
     // Expression de validation
     const VALID_NUMBER_REGEX = /^[0-9]+$/;
 
@@ -41,7 +42,7 @@
 
             // Si l'utilisateur clique sur "Cancel", affiche un message et termine la fonction.
             if (input === null) {
-                console.log("Tu as abandonné. Le nombre à deviner était :", numberToFind);
+                console.log(CANCEL, numberToFind);
                 return;
             }
 
