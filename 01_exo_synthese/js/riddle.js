@@ -1,4 +1,6 @@
 (() => {
+    // TODO: Add an option to change the bounds
+    // TODO: Add comments
     const BOUND = { MIN : 0, MAX : 100 };
     const REGEX_VALID_NUMBER = /^[0-9]+$/;
     const isValidNumber = number => { return REGEX_VALID_NUMBER.test(number); }
