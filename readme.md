@@ -6,9 +6,15 @@ Ce projet contient deux versions d'un script JavaScript qui demande à l'utilisa
 
 Ce projet contient deux branches avec des versions différentes du script :
 
-1. **Branche "main"** ![version simple](https://img.shields.io/badge/version-simple-green) - La version simple et initiale du script. Vous pouvez tester cette version en cliquant sur ce lien : [main sur JSFiddle](https://jsfiddle.net/LaCeriseDev/j4pfwk6o)
+1. **Branche "main"** ![version simple](https://img.shields.io/badge/version-simple-green) - Les versions simples et initiales des scripts. 
+Vous pouvez tester ces versions en cliquant sur ces liens : 
+    Accueil Personalisé -> [main sur JSFiddle](https://jsfiddle.net/LaCeriseDev/jw9emxdn/1)
+    Devinette -> [main sur JSFiddle](https://jsfiddle.net/LaCeriseDev/jw9emxdn/2)
 
-2. **Branche "optimized-version"** ![version optimisée](https://img.shields.io/badge/version-optimisée-orange) - Une version optimisée du script, avec une meilleure gestion des erreurs et des fonctionnalités supplémentaires. Vous pouvez tester cette version en cliquant sur ce lien : [optimized-version sur JSFiddle](https://jsfiddle.net/LaCeriseDev/j4pfwk6o/1/)
+2. **Branche "optimized-version"** ![version optimisée](https://img.shields.io/badge/version-optimisée-orange) - Des versions optimisée des scripts initiaux, avec une meilleure gestion des erreurs et des fonctionnalités supplémentaires. 
+Vous pouvez tester ces versions en cliquant sur ces liens : 
+    Accueil Personalisé -> [optimized-version sur JSFiddle](https://jsfiddle.net/LaCeriseDev/jw9emxdn/3)
+    Devinette -> [optimized-version sur JSFiddle](https://jsfiddle.net/LaCeriseDev/jw9emxdn/4)
 
 ## Langues
 
