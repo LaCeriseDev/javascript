@@ -64,7 +64,5 @@
     ];
 
     // Affiche le message de bienvenue personnalisé
-    // console.log(`Bonjour ${GREETINGS[gender]} ${firstname} ${lastname}, comment allez-vous ?`);
     console.log(WELCOME.replace("{GREETINGS[gender]}",GREETINGS[gender]).replace("{firstname}",firstname).replace("{lastname}",lastname));
-    
 })();
