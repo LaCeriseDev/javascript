@@ -1,9 +1,3 @@
-
-let name = {
-    firstname : prompt('Votre prénom'),
-    lastname : prompt('Votre nom')
-}
-
-console.log(name);
-
-console.log(`Bonjour ${name.firstname} ${name.lastname}`);
+let name = prompt('Votre prénom');
+name += ' ' + prompt('Votre nom')
+console.log(`Bonjour ${name}`);
