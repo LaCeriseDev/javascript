@@ -1,4 +1,3 @@
-(() =>{
 function getRandomNumberBetween(min,max) {
     return Math.floor(Math.random()* (max-min + 1) + min);
 }
@@ -18,4 +17,3 @@ while (numberToFind != userGuessedNumber) {
 }
 
 console.log(`parfait le nombre était bien ${numberToFind}! Tu as trouvé en ${tryToFind}`);
-})()
