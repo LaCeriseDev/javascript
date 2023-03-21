@@ -2,7 +2,7 @@ const enumMusketeers = (array , str= "", i = 0) => {
     if( i === 0 ) str += array[i]
     else str += ', ' + array[i]
     i++
-    return array[i] === array[array.length] ? str : enumMusketeers(array, str, i)
+    return i === array.length ? str : enumMusketeers(array, str, i)
 }
 
 let musketeers = ["Athos", "Porthos", "Aramis"]

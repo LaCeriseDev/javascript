@@ -78,24 +78,19 @@ const reverseText = (str, i = str.length - 1, reversed = "") => {
  * @returns - une chaine de caractère modifié en leet
  */
 const leetSpeech = str => {
-    let leetString = '';
     const leetMapping = { 
-        'b' : '8',
         'B' : '8',
         'S' : '5',
-        's' : '5',
         'O' : '0',
-        'o' : '0',
         'I' : '1',
-        'i' : '1',
         'A' : '4',
-        'a' : '4',
-        'L' : '1',
-        'l' : '1'
+        'L' : '1'
     };
 
-    for (let i = 0; i < str.length; i++) {
-        leetString += leetMapping[str[i]] || str[i];
+    let leetString = '';
+    
+    for (i = 0; i < str.length; i++) {
+        leetString += leetMapping[str[i].toUpperCase()] || str[i];
     }
     return leetString
 }
@@ -104,11 +99,12 @@ const leetSpeech = str => {
 let text = getText();
 let capitalizeText = text.toUpperCase();
 let lowerText = text.toLowerCase();
+
 console.log(lowerText);
 console.log(capitalizeText);
 
 console.log(`nombre de voyelle  :   ${countVowels(text)}`);
 console.log(`nombre de consonne :   ${countConsonants(text)}`);
 console.log(`nombre de mot      :   ${countWords(text)}`);
-console.log(`verlant : ${reverseText(text)}`)
-console.log(`leet : ${leetSpeech(capitalizeText)}`)
+console.log(`verlant            :   ${reverseText(text)}`)
+console.log(`leet               :   ${leetSpeech(capitalizeText)}`)
