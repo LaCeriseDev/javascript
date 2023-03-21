@@ -1,6 +1,6 @@
 (async () => {
     const LIMITS = { MIN: 0, MAX: 100 };
-    const getRandomNumberBetween = Math.floor(Math.random() * (LIMITS.MAX - LIMITS.MIN + 1) + LIMITS.MIN);
+    const numberToFind = Math.floor(Math.random() * (LIMITS.MAX - LIMITS.MIN + 1) + LIMITS.MIN);
     
     // Messages pour l'utilisateur
     const INVALID_INPUT_ERROR = "Entrée invalide. Veuillez réessayer.";
@@ -29,7 +29,7 @@
     */
    const checkNumber = async (numberToFind, tryToFind = 1) => {
        // const input = await new Promise(prompt(GUESS_PROMPT);
-       const input = prompt(GUESS_PROMPT);
+       let input = prompt(GUESS_PROMPT);
         
         // Si l'utilisateur clique sur "Cancel", affiche un message et termine la fonction.
         if (input === null) {
@@ -49,8 +49,5 @@
             return console.log(SUCCESS.replace("{numberToFind}", numberToFind).replace("{tryToFind}", tryToFind));
         };
     
-
-    const numberToFind = getRandomNumberBetween;
-
     checkNumber(numberToFind)
 })();
