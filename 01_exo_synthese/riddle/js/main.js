@@ -19,7 +19,6 @@
      * @returns {boolean} - Retourne 'true' si la valeur est un nombre valide, sinon 'false'.
      */
     const isValidNumber = number => VALID_NUMBER_REGEX.test(number);
-
     
     /**
      * Vérifie si le nombre entré par l'utilisateur est égal au nombre à deviner
