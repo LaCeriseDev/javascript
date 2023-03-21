@@ -29,9 +29,7 @@
     */
    const checkNumber = async (numberToFind, tryToFind = 1) => {
        // const input = await new Promise(prompt(GUESS_PROMPT);
-       const input = await new Promise(resolve => {
-           setTimeout(() => resolve(prompt(GUESS_PROMPT)), 0);
-        });
+       const input = prompt(GUESS_PROMPT);
         
         // Si l'utilisateur clique sur "Cancel", affiche un message et termine la fonction.
         if (input === null) {
