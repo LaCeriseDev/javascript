@@ -2,7 +2,7 @@
 
 Ce projet contient deux projets qui demande à l'utilisateur de saisir son nom, prénom et genre, puis affiche un message de bienvenue personnalisé et qui demande à l'utilisateur de saisir un nombre pour deviner celui de la partie.
 
-## Contenu du projet
+## Contenu
 
 Ce projet contient deux branches avec des versions différentes du script :
 
