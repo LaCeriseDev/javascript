@@ -1,10 +1,6 @@
-function getRandomNumberBetween(min,max) {
-    return Math.floor(Math.random()* (max-min + 1) + min);
-}
-
 let min = 0;
 let max = 100;
-let numberToFind = getRandomNumberBetween(min,max);
+let numberToFind = Math.floor(Math.random()* (max-min + 1) + min);
 let userGuessedNumber = 0;
 let tryToFind = 0;
 
