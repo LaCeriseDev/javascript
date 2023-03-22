@@ -6,8 +6,8 @@ let tryToFind = 0;
 
 while (numberToFind != userGuessedNumber) {
     userGuessedNumber = prompt(`Deviner le nombre entre ${min} et ${max}`);
-    if (userGuessedNumber > numberToFind ) {console.log("plus bas");}
-    if (userGuessedNumber < numberToFind ) {console.log("plus haut");}
+    if (userGuessedNumber > numberToFind ) {console.log(`nombre essayé : ${userGuessedNumber} \nplus bas`);}
+    if (userGuessedNumber < numberToFind ) {console.log(`nombre essayé : ${userGuessedNumber} \nplus haut`);}
     tryToFind++;
 }
 
