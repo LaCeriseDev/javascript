@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const subtraction   =   (a , b)   =>    a - b
+        const add           =   (a , b)   =>    a + b
+        const multiply      =   (a , b)   =>    a * b
+        const divide        =   (a , b)   =>    a / b
+        const modulo        =   (a , b)   =>    a % b
+        const percent       =   (a , b)   =>    a * (b / 100)
+
+        const calculate =   (operation, a, b) => b == null ? operation(a) : operation(a,b)
+
+        console.log(calculate(subtraction, 3, 2))
+        console.log(calculate(add, calculate(multiply, 2, 2), 1))
+        console.log(calculate(multiply, 3, 2))
+        console.log(calculate(divide, 3, 2))
+        console.log(calculate(modulo, 3, 2))
+        console.log(calculate(percent, 50, 200))
+
+    </script>
+</body>
+</html>
