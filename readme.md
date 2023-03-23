@@ -1,6 +1,4 @@
-# Bienvenue sur mes projets d'entrainement au Javascript ![Version Française](https://img.shields.io/badge/langue-français-blue)
-
-Ce projet contient deux projets qui demande à l'utilisateur de saisir son nom, prénom et genre, puis affiche un message de bienvenue personnalisé et qui demande à l'utilisateur de saisir un nombre pour deviner celui de la partie.
+# Bienvenue sur mes projets d'entrainement basé sur des exercices sur le Javascript
 
 ## Contenu
 
