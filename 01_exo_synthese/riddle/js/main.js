@@ -9,6 +9,6 @@ while (numberToFind != userGuessedNumber) {
     if (userGuessedNumber > numberToFind ) {console.log(`nombre essayé : ${userGuessedNumber} \nplus bas`);}
     if (userGuessedNumber < numberToFind ) {console.log(`nombre essayé : ${userGuessedNumber} \nplus haut`);}
     tryToFind++;
-}
+} 
 
 console.log(`parfait le nombre était bien ${numberToFind}! Tu as trouvé en ${tryToFind}`);
