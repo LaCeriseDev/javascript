@@ -97,14 +97,14 @@ const leetSpeech = str => {
 
 
 let text = getText();
-let capitalizeText = text.toUpperCase();
-let lowerText = text.toLowerCase();
 
-console.log(lowerText);
-console.log(capitalizeText);
+console.log(text.toLowerCase());
+console.log(text.toUpperCase());
 
 console.log(`nombre de voyelle  :   ${countVowels(text)}`);
 console.log(`nombre de consonne :   ${countConsonants(text)}`);
 console.log(`nombre de mot      :   ${countWords(text)}`);
-console.log(`verlant            :   ${reverseText(text)}`)
-console.log(`leet               :   ${leetSpeech(capitalizeText)}`)
+// console.log(`verlant            :   ${reverseText(text)}`)
+console.log(`verlant            :   ${text.split('').reverse().join('')}`);
+console.log(`verlant            :   ${text.split('')}`);
+console.log(`leet               :   ${leetSpeech(text.toUpperCase())}`)
